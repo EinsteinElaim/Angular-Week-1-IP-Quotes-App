@@ -1,0 +1,69 @@
+<div class="container-fluid" style="margin-top: 15px;">
+
+    <form (ngSubmit)='submitQuote()' #quoteForm='ngForm' style="border-radius: 15px; background-color: pink;">
+        <h1 class="text-center" style="color: rgb(204, 95, 146);">Add a new Quote:</h1>
+    
+        <div class="text-center">
+            <div class="form-group">
+
+                <label for="quote">Quote</label>
+                <input type="text" style="width: 95%; margin-left: 2.5%;" class="form-control" id="quote" [(ngModel)]="newQuote.quote" name="quote" #quote='ngModel' required>
+                
+                <!-- Display: {{newQuote.quote}} -->
+    
+                
+                <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
+                    <p>Quote text is required!</p>
+                </div>
+    
+            </div>
+            <div class="form-group">
+                
+                <label for="author">Author</label>
+                <input type="text" style="width: 95%; margin-left: 2.5%;" class="form-control" id="author" [(ngModel)]="newQuote.author" name="author" #author='ngModel' required>
+    
+                <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
+                    <p>Author's name is required!</p>
+                </div>
+    
+            </div>
+            <div class="form-group">
+                
+                <label for="author">Submitter name</label>
+                <input type="text" style="width: 95%; margin-left: 2.5%;" class="form-control" id="submitterName" [(ngModel)]="newQuote.submitterName" name="submitterName" #submitterName='ngModel' required>
+    
+                <div [hidden]="submitterName.valid || submitterName.pristine" class="alert alert-danger">
+                    <p>Submitter's name is required!</p>
+                </div>
+    
+            </div>
+            <div class="form-group">
+    
+                <label for="description">Period lived by {{newQuote.author}}</label>
+                <input type="text" style="width: 95%; margin-left: 2.5%;" class="form-control" id="description" [(ngModel)]="newQuote.description" name="description" #description='ngModel' required>            
+    
+                <div [hidden]="description.valid || description.pristine" class="alert alert-danger">
+                    <p>Period lived by author {{newQuote.author}} is required!</p>
+                </div>
+    
+            </div>
+            <div class="form-group">
+    
+                <label for="complete">This quote will be hosted to?</label>
+                <br>
+                <input type="date" id="complete" [(ngModel)]="newQuote.completeDate" name="completeDate" #completeDate="ngModel" required>
+    
+                <div [hidden]="completeDate.valid || completeDate.pristine" class="alert alert-danger">
+                    <p>Quote hosting to due date is required!</p>
+                </div>
+    
+            </div>
+        </div>
+        
+        <div class="text-center">
+            <button type="submit" style="margin-bottom: 5px; border-radius: 15px;" class="btn btn-success" id="addquoteform">Add Quote</button>
+        </div>
+
+    </form>
+
+</div>

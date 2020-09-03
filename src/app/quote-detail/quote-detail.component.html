@@ -1,0 +1,12 @@
+<div class="text-center" style="background-color: rgb(219, 157, 184); border-radius: 15px;">
+    <!-- <p>quote-detail works!</p> -->
+    <p>{{quote.author}} {{quote.description}} in {{quote.completeDate|dateCount}} days.</p>
+    <button class="btn-success" style="border-radius: 15px; border: none; width: 150px; height: 45px;" (click)="start()" *ngIf="!active">Start countup : {{display | date :"HH:mm:ss":'UTC'}}</button>
+    <button class="btn-danger" style="border-radius: 15px; border: none; width: 150px; height: 45px;" (click)="stop()" *ngIf="active">Stop countup : {{display | date :"HH:mm:ss":'UTC'}}</button>
+    <br>
+    <button class="btn-success" (click)="upVoteButtonClick()" style="border-radius: 15px; border: none; width: 150px; height: 40px;"><i class="fa fa-thumbs-up"></i>&nbsp; Upvotes: &nbsp; {{numberOfUpVotes}}</button>
+    &nbsp;
+    <button class="btn-success" (click)="downVoteButtonClick()" style="border-radius: 15px; border: none; width: 150px; height: 40px;"><i class="fa fa-thumbs-down"></i>&nbsp; Downvotes: &nbsp; {{numberOfDownVotes}}</button>
+    &nbsp;
+    <button (click)='quoteDelete(true)' class="btn btn-danger" style="border-radius: 15px; border: none; width: 150px; height: 40px;"><i class="fa fa-trash"></i>&nbsp;Delete Quote</button>
+</div>

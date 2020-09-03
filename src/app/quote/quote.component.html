@@ -1,0 +1,40 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<div class="container-fluid" style="background-color: salmon; color: rgb(204, 95, 146);">
+    <!-- <p>quote component works!</p> -->
+    <h1 style="text-align: center;">My Quotes App</h1>
+    <hr>
+    <div class="row text-center" style="background-color: salmon; padding: 1.2%;">
+        <div class="col-md-5 text-center" style="background-color:pink; border-radius: 15px;">
+            
+            <h1 style="color: rgb(204, 95, 146);">Quotes:</h1>
+            <!-- <p>Quotes array from the Quote blueprint class in quote component:</p> -->
+            <div *ngFor='let quote of quotess; let i = index' style="border-radius: 15px; background-color: rgb(248, 149, 165); margin-bottom: 10px;">
+                
+                <div>
+                    <h4 id={{i}} appStrikethrough>"{{quote.quote}}"</h4>
+                    <h5>Posted by : {{quote.submitterName}}</h5>
+                    <h6>Quote hosted here until : {{quote.completeDate|date|uppercase}}</h6>
+                    <button (click)='toggleDetails(i)' style="border-radius: 15px; margin-bottom: 5px;" class="btn btn-primary"><i class="fa fa-caret-down"></i>&nbsp; Toggle Details</button>
+                </div>
+
+                <div *ngIf='quote.showDescription'>
+                    <app-quote-detail [quote]='quote' (isComplete)='deleteQuote($event, i)'></app-quote-detail>
+                </div>
+
+            </div>
+            <!-- <p *ngIf='quotess.length > 5'>Your quotes are too many.</p> -->
+            <p>You have {{quotess.length}} quotes.</p>
+        </div>
+        <div class="col-md-1" style="margin-right: 5%;">
+
+        </div>
+        <div class="col-md-5" style="background-color: rgb(231, 168, 180); border-radius: 15px; margin-left: 15px;">
+        
+            <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+            
+        </div>
+        
+    </div>
+</div>
