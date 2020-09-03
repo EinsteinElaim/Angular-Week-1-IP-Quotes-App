@@ -6,7 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Live Link
 <li>
-    <a href="https://einsteinelaim.github.io/Angular-Week-1-Goals-App-Final/">https://einsteinelaim.github.io/Angular-Week-1-IP-Quotes-App/</a>
+    <a href="https://einsteinelaim.github.io/Angular-Week-1-Goals-App-Final/">https://einsteinelaim.github.io/Angular-Week-1-IP-Quotes-App-Final/</a>
 </li>
 
 ## Technologies Used
